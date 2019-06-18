@@ -3,19 +3,19 @@
      font-size:$primary-font-size;
      color:$primary-color;
      font-family:$font-family;
-     overflow-X:hidden;
-	 line-height:1.8;
+     font-weight:$font-regular;
+	 line-height:$line-height;
 }
 
 
 
- h1,h2,h3,h4,h5,h6{
-     font-weight:$font-bold;
-     margin:0;
-	 color: darken($primary-color, 10%);
+h1,h2,h3,h4,h5,h6{
+	 color: $dark-color;
+	 font-weight:$font-bold;
+	 font-family:$heading-font;
+	 line-height:$line-height2;
      a{
-         color: darken($primary-color, 10%);
-         font-weight:$font-medium;
+         color:$dark-color;
     }
 }
  a{
@@ -23,26 +23,30 @@
      transition:all .2s;
      &:hover{
          text-decoration:none;
-         color:$highlight-color;
+         color:$dark-color;
          transition:all .1s;
     }
 }
- .heading-1 {
+h1,.heading-1 {
      font-size:$h1-font-size;
 }
- .heading-2 {
+h2,.heading-2 {
      font-size:$h2-font-size;
-	 font-weight:$font-semi;
 }
- .heading-3 {
+h3,.heading-3 {
      font-size: $h3-font-size;
-	 font-weight:$font-medium;
 }
- .heading-4 {
+h4,.heading-4 {
      font-size:$h4-font-size;
+} 
+h5,.heading-5 {
+     font-size:$h5-font-size;
+}
+h6,.heading-6 {
+     font-size:$h6-font-size;
+	 line-height:$line-height;
 }
 .large-heading{
 font-size:$h1-font-size;
-font-weight:$font-semi;
 }
  

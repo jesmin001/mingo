@@ -1,0 +1,1302 @@
+/*-------------------------------------------------------------------------- 
+Template name: Mingo - Responsive HTML Template 
+Template URL: https://themeix.com/livedemo?theme=mingo-HTML 
+Author Name: Themeix 
+Author URL: https://themeix.com 
+Tag: tab mobile,computer,desctop,responsive design,all browser supported,html5,css3,Sass. 
+Verson: 1.0 
+Description: Mingo is modern and latest technology based blogging template created by html5 and sass. 
+/* =========================== 
+
+TABLE INDEX 
+1. Themeix-header css 
+2. Bg color & font color 
+3. Section Spacing 
+4. Form & Button 
+5. Mingo-feature-post-area 
+6. Blog post 
+7. Authors page 
+8. Contact page 
+9. Footer-area 
+10. ScrollUp 
+11. Preloader 
+
+=========================== */
+
+@import "./base/variable";
+@import "./base/fonts";
+@import "./base/prefix";
+@import "./base/media_query";
+@import "./base/typography";
+
+/* ============================================== 
+
+1. Themeix-header css 
+
+============================================== */
+
+.themeix-header {
+	padding: 15px 0; 
+	.container {
+		position: relative;
+	}
+}
+
+.themeix-header .col-md-7 {
+	position: inherit !important;
+}
+
+.themeix-menu ul#navigation-menu {
+	@include desktop {
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+}
+
+.themeix-logo {
+	padding-right: 30px;
+	img {
+		max-height: 50px;
+	}
+	a {
+		display: block;
+	}
+	@include desktop {
+		z-index: 5
+	}
+	@include tablet {
+		z-index: 5
+	}
+}
+
+.collapse-button {
+	position: absolute;
+	top: 8px;
+	right: 0;
+	z-index: 10;
+}
+
+ul.slimmenu {
+	width: 100%;
+	list-style-type: none;
+	float: left;
+	.menu-collapser {
+		@include desktop {
+			position: absolute;
+			right: 0;
+			z-index: 9;
+			top: 0;
+		}
+		@include mobile {
+			position: absolute;
+			z-index: 9;
+			right: 15px;
+			top: 0;
+		}
+	}
+	@include desktop {
+		position: absolute;
+		left: 0;
+		z-index: 9;
+		top: 50px;
+		background: #fff;
+		width: 100%;
+	}
+	@include tablet {
+		position: absolute;
+		z-index: 9;
+		top: 50px;
+		background: #fff;
+		left: 0;
+		width: 100%;
+	}
+	li {
+		background-color: transparent !important;
+		border: 0;
+		position: relative;
+		a {
+			font-size: $primary-font-size;
+			font-weight: $font-semi !important;
+			font-family: $heading-font;
+			padding: 7px 20px 7px 20px;
+			display: block;
+			position: relative;
+			color: $dark-color !important;
+			@include desktop {
+				padding: 15px;
+			}
+			@include tablet {
+				padding: 15px;
+			}
+			&:hover {
+				color: $highlight-color!important; 
+			}
+		}
+		@include tablet {
+			text-align: left;
+		}
+		&:hover .sub-toggle i:before {
+			color: $white-color;
+		}
+	}
+}
+
+ul.slimmenu li>ul {
+	left: 0;
+	top: 143%;
+}
+
+.has-submenu ul>li {
+	position: relative;
+	&:before {
+		position: absolute;
+		top: -5px;
+		left: 45px;
+		width: 10px;
+		height: 10px;
+		content: "";
+		background: $white-color;
+		transform: rotate(-45deg);
+	}
+}
+
+.has-submenu ul li {
+	transition: all .4s ease;
+	background: #fff !important;
+	width: 100% !important;
+	transition: all .1s linear;
+	position: relative;
+	&:hover a {
+		transition: all .2s linear;
+	}
+	a {
+		padding: 8px 15px !important;
+		font-weight: $font-regular !important;
+		text-align: left;
+		display: block;
+		color: $primary-color !important;
+		color: #fff;
+		&:hover {
+			background: #fff !important;
+		}
+	}
+	&:hover {
+		background: $white-color;
+		transition: all .4s ease;
+	}
+	a:hover {
+		transition: all .4s ease;
+	}
+	@include mobile {
+		width: 100% !important;
+	}
+}
+
+ul.slimmenu li>ul,
+ul.has-submenu li>ul>li ul {
+	width: 180px;
+	box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.has-submenu>a {
+	color: $white-color !important;
+}
+
+ul.slimmenu li .sub-toggle {
+	background-color: transparent !important;
+	width: 20px;
+	@include desktop {
+		color: $primary-color;
+		margin-right: 15px;
+		margin-top: 5px;
+	}
+	@include tablet {
+		color: $primary-color;
+		margin-right: 15px;
+		margin-top: 5px;
+	}
+	i {
+		font-size: 18px;
+		color: transparent;
+		position: relative;
+		top: -10px;
+		left: 0;
+		&:before {
+			content: "\f107";
+			font-family: "FontAwesome";
+			color: $primary-color !important;
+			font-size: $small-font;
+			font-style: normal;
+			position: absolute;
+			top: 0;
+		}
+	}
+	i:before {
+		@include desktop {
+			color: $primary-color !important;
+		}
+		@include tablet {
+			color: $primary-color !important;
+		}
+	}
+}
+
+.has-submenu ul {
+	background: $white-color;
+	@include desktop {
+		width: 100% !important;
+		display: block;
+	}
+	@include tablet {
+		width: 100% !important;
+		display: block;
+	}
+	@include mobile {
+		width: 100% !important;
+		display: block;
+	}
+}
+
+ul.slimmenu.collapsed li a {
+	@include desktop {
+		text-align: left;
+	}
+}
+
+.has-submenu ul>li:before {
+	background: none !important;
+}
+
+.menu-collapser {
+	position: absolute;
+	position: absolute;
+	right: 10px;
+}
+
+.page-header {
+	p {
+		margin-bottom: 0;
+	}
+}
+
+.author-bio {
+	width: 100%;
+	background:$bg-color1;
+	border: 1px solid #DCE0EF;
+	@include tablet {
+		display: block !important;
+	}
+	.mingo-author-img {
+		float: left;
+		width: 350px;
+		img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		}
+		@include tablet {
+			width: 100%;
+			float: none;
+		}
+	}
+	.author-right-text {
+		float: left;
+		width: calc(100% - 375px);
+		padding: 30px;
+		@include tablet {
+			width: 100%;
+			float: none;
+		}
+	}
+	.social-icon ul {
+		margin: 0;
+		margin-top: 15px;
+	}
+	.a-title h3 {
+		margin-bottom: 15px;
+		font-weight:$font-bold;
+	}
+	.a-title span {
+		display: block;
+		font-size: $small-font;
+		font-weight: $font-regular;
+		color: $primary-color;
+		margin-top: 5px;
+	}
+}
+
+
+/* ==============================================
+
+ 2. Bg color & font color 
+ 
+ ============================================== */
+
+.white-bg {
+	background: $white-color;
+}
+
+.dark-bg {
+	background: $dark-color;
+}
+
+.main-content-area {
+	background: $grey-bg;
+}
+
+.image-icon {
+	background: $blue-color;
+}
+
+.video-icon {
+	background: $pink-color;
+	&:before {
+		border-bottom: 5px solid $pink-color !important;
+		border-right: 5px solid transparent;
+	}
+}
+
+.share-icon {
+	background: $yellow-color;
+	&:before {
+		border-bottom: 5px solid $yellow-color !important;
+		border-right: 5px solid transparent;
+	}
+}
+
+
+/* ============================================== 
+
+3. Section Spacing 
+
+============================================== */
+.my-30{
+    margin:30px 0;
+}
+.section-pt {
+	padding-top: $section-100;
+}
+
+.section-pb {
+	padding-bottom: $section-100;
+}
+
+.section-pb-30 {
+	padding-bottom: $inner-30;
+}
+
+.section-pb-40 {
+	padding-bottom: $inner-40;
+}
+
+.section-pb-60 {
+	padding-bottom: $inner-60;
+}
+
+.section-pt-60 {
+	padding-top: $inner-60;
+}
+
+.section-pt-40 {
+	padding-top: $inner-30;
+}
+
+.section-pb-70 {
+	padding-bottom: $inner-70;
+}
+
+.inner-pb-90 {
+	padding-bottom: $inner-90;
+}
+
+.inner-pt-30 {
+	padding-top: $inner-30;
+}
+
+
+/* ============================================== 
+
+4. Form & Button 
+
+============================================== */
+
+.form-control:focus {
+	outline: 0 !important;
+}
+
+textarea:focus,
+input:focus {
+	outline: none;
+}
+
+.buttonload {
+	background-color: $highlight-color;
+	border: none;
+	color: $bg-color1;
+	padding: 8px 16px;
+	font-size: $primary-font-size;
+	&:hover {
+		background-color: $primary-color;
+	}
+}
+
+.comment-form input[type=text],
+.mingo-form input[type=text] {
+	padding: 8px 15px;
+	border: 1px solid #ddd;
+	background-color: transparent;
+	width: 100%;
+}
+
+textarea {
+	width: 100%;
+	border: 1px solid #ddd;
+	padding: 15px;
+	background-color: transparent !important;
+}
+
+#search-form {
+	@include desktop {
+		display: none;
+	}
+	@include tablet {
+		display: none;
+	}
+}
+
+#search-form input[type=text] {
+	border: 1px solid #E0DEDE;
+	border-radius: 30px;
+	padding: 6px 20px;
+	float: right;
+	position: relative;
+	background: $grey-bg;
+}
+
+#search-button {
+	position: absolute;
+	right: 27px;
+	background: transparent;
+	top: 6px;
+	i {
+		color: $primary-color;
+	}
+}
+
+.btn-submit,
+.dark-btn {
+	padding: 8px 40px;
+	-webkit-transition: all .1s linear;
+	transition: all .1s linear;
+	display: inline-block;
+	background: $highlight-color;
+	color: $white-color;
+	border: none;
+	cursor: pointer;
+	font-weight: $font-semi;
+	border: 2px solid $highlight-color;
+	&:hover {
+		background-color: $white-color;
+		color: $highlight-color;
+		border: 2px solid $highlight-color;
+	}
+	&:focus {
+		outline: 0;
+	}
+}
+
+.dark-btn {
+	a {
+		color: $white-color;
+	}
+	&:hover a {
+		color: $primary-color;
+	}
+}
+
+textarea,
+input[type=text],
+button {
+	&:focus {
+		outline: 0;
+	}
+}
+
+button {
+	border: none;
+	cursor: pointer;
+}
+
+.btn-load {
+	margin-top: 60px;
+	a {
+		border-radius: 6px;
+		font-weight: $font-regular;
+	}
+}
+
+iframe {
+	border: none;
+}
+
+.main-area {
+	overflow: hidden;
+}
+
+/* Top slider */
+//@extend-elements
+//original selectors
+//.top-slider .owl-nav button.owl-prev, .top-slider .owl-nav button.owl-next
+%extend_1 {
+	background: #dc3545;
+	padding: 0!important;
+	font-size: 30px;
+	color: #fff;
+	width: 30px;
+	height: 30px;
+	line-height: 1;
+	text-align: center;
+}
+
+
+.top-slider {
+	.owl-nav {
+		position: absolute;
+		top: calc(50% - 30px);
+		width: 100%;
+		button {
+			&.owl-prev {
+				@extend %extend_1;
+				left: -15px;
+				float: left;
+				position: absolute;
+				opacity: 0;
+			}
+			&.owl-next {
+				@extend %extend_1;
+				right: -15px;
+				float: right;
+				position: absolute;
+				opacity: 0;
+			}
+		}
+	}
+	&:hover .owl-nav button {
+		&.owl-prev {
+			opacity: 1;
+			transition: $transition-base;
+		}
+		&.owl-next {
+			opacity: 1;
+			transition: $transition-base;
+		}
+	}
+}
+.owl-dots {
+	position: absolute;
+	top: 0;
+}
+
+/* ============================================== 
+
+5. Mingo-feature-post-area 
+
+============================================== */
+
+.mingo-feature-post-area {
+	.mingo-feature-post {
+		background: $white-color;
+		padding: 30px;
+		margin-bottom: 30px;
+		border: 1px solid #DCE0EF;
+		@include transition(all .2s ease-out);
+		&:hover {
+			margin-top: -3px;
+			box-shadow: 0 19px 23px #d3dce2;
+			@include transition(all .3s ease-out);
+		}
+		img {
+			width: 100%;
+		}
+	}
+	.mingo-post-title {
+		margin-bottom: 20px;
+			h4 {font-weight : $font-semi;
+		a {
+			color: $dark-color;
+			white-space: normal;
+			word-break: break-word;
+			&:hover {
+				color:$highlight-color
+			}
+		}
+	}
+
+		
+	}
+	.mingo-tag {
+		margin-bottom: 10px;
+	}
+	.mingo-tag p {
+		display: inline-block;
+		color: $grey-color;
+		padding-right: 20px;
+		font-size: $small-font;
+		font-weight: $font-regular;
+		margin: 0;
+		a {
+			color: $grey-color;
+			&:hover {
+				color: $highlight-color
+			}
+		}
+		i {
+			padding-right: 10px;
+		}
+	}
+	.mingo-icon {
+		float: right;
+		top: 15px;
+		position: absolute;
+		right: 11px;
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+		display: block;
+		text-align: center;
+		&:before {
+			width: 0;
+			height: 0;
+			border-bottom: 5px solid $blue-color;
+			border-right: 5px solid transparent;
+			position: absolute;
+			top: -5px;
+			z-index: 1;
+			right: 0px;
+			content: "";
+		}
+		i {
+			color: $white-color;
+		}
+	}
+}
+
+
+/* ============================================== 
+
+6. Blog post 
+
+============================================== */
+
+.mingo-blog-thumb img{
+   width: 100%;
+   max-height:80vh;
+   object-fit:cover;
+}
+.middle-thumb img,
+.m-small-img img {
+	width: 100%;
+}
+
+.post-entry-content {
+	background-color: $bg-color1;
+	border: 1px solid #DCE0EF;
+	padding: 30px;
+	.mingo-blog-title{
+		    border-bottom: 1px solid #ddd;
+		h1 {
+		font-weight: $font-bold;	
+		}
+	}
+	.mingo-tag p {
+		font-size: $small-font;
+		display: inline-block;
+		font-weight: $font-regular;
+		padding-right: 15px;
+		margin: 0;
+		a {
+			color: $highlight-color;
+			&:hover {
+				color: $dark-color;
+			}
+			
+		}
+		i {
+			padding-right: 10px;
+		}
+	}
+	.lagre-font {
+		p {
+			font-size: $h5-font-size;
+			line-height: $line-height2;
+			&:first-letter {
+				font-size: $h1-font-size;
+				color: $highlight-color;
+			}
+		}
+	}
+}
+
+.white-box {
+	background-color: $bg-color1;
+	padding: 30px;
+	border: 1px solid #DCE0EF;
+}
+
+.fluid-image {
+	img {
+		background-size: cover;
+		width: 100vw;
+		position: relative;
+		left: 50%;
+		right: 50%;
+		height: auto;
+		margin-left: -50vw;
+		margin-right: -50vw;
+		background-position: center center;
+	}
+}
+
+.image-gallery {
+	.gallery-img {
+		margin-bottom: 30px;
+		img {
+			width: 100%;
+		}
+	}
+}
+
+.tags-social-meta {
+	background-color: $bg-color1;
+	padding: 15px;
+	border: 1px solid #DCE0EF;
+	.tags {
+		.display-all-tags {
+			@include tablet {
+				display:none;
+			}
+			@include mobile {
+				display:none;
+			}
+			li {
+				span {
+					
+				}
+				&:last-child {
+					span.tag-sep {
+						display:none;
+					}
+				}
+			}
+		}
+		ul {
+			margin: 0;
+		}
+	}
+	.social-meta {
+		ul {
+			margin: 0;
+		} li {
+			a{
+				color:$primary-color;
+				&:hover {
+					color: $highlight-color;
+				}
+			}
+		}
+		
+	}
+}
+
+.author-bio-details {
+	text-align: center;
+	width: 100%;
+	.author-pic img {
+		width: 90px;
+		height: 90px;
+		object-fit: cover;
+		border-radius: 50%;
+	}
+	span {
+		display: block;
+	}
+	.a-title{
+		a{
+			color: $dark-color;
+			&:hover {
+				color: $highlight-color
+			}
+		}
+	}
+}
+
+.comments-details {
+	display: table;
+	width: 100%;
+}
+
+.author-image img {
+	width: 60px;
+	height: 60px;
+	object-fit: cover;
+	border-radius: 50%;
+	margin-right: 25px;
+	float: left;
+}
+
+.comment-text {
+	float: left;
+	width: calc(100% - 85px);
+}
+
+.c-title {
+	p {
+		display: inline-block;
+		margin: 0;
+		a {
+			font-weight: $font-semi;
+			color: $dark-color;
+			&:hover {
+				color: $highlight-color
+			}
+		}
+		span {
+			font-size: $small-font;
+		}
+	}
+}
+
+.reply-btn {
+	@include mobile {
+		float: none !important;
+		margin-left: 10px !important;
+	}
+	a {
+		font-weight: $font-semi !important;
+		text-transform: uppercase;
+		font-size: $small-font;
+		color: $primary-color;
+	}
+}
+
+.reply-comment {
+	@include mobile {
+		padding-left: 0 !important;
+		margin-left: 0 !important;
+	}
+}
+
+blockquote {
+	position: relative;
+	font-size: $h5-font-size;
+	&:before {
+		font-family: "FontAwesome";
+		content: "\f10d";
+		position: absolute;
+		top: 0px;
+		left: 0;
+		color: darken($grey-bg, 5%);
+		font-size: 40px;
+	}
+	p {
+		z-index: 1;
+		padding: 25px 0px 0px 15px;
+		position: relative;
+		color: $dark-color;
+	}
+}
+
+
+/* ============================================== 
+
+7. Authors page 
+
+============================================== */
+
+.mingo-author-feature,
+.mingo-tags-feature {
+	position: relative;
+	background-repeat: no-repeat;
+	width: 100%;
+	background-position: center;
+	margin-bottom: $inner-30;
+	img {
+		width: 100%;
+		    height: 400px;
+    object-fit: cover;
+	@include desktop {
+		height: 300px;
+	}
+	@include mobile {
+		height: auto;
+	}
+	@include mobile {
+		height: auto;
+	}
+	}
+	h4,
+	h5,
+	h3 {
+		margin: 0;
+	}
+}
+
+.author-name,
+.tags-name {
+	background: #ffffff;
+	display: inline-block;
+	position: absolute;
+	width: 230px;
+	text-align: center;
+	margin: 0 auto;
+	left: 50%;
+	bottom: 0;
+	padding: 20px 0;
+	transform: translate(-50%, -50%);
+	@include transition(all .2s ease-out);
+	&:hover {
+		margin-bottom: -3px;
+		@include transition(all .2s ease-out);
+	}
+	&:before {
+		position: absolute;
+		left: 10px;
+		right: 10px;
+		top: 10px;
+		bottom: 10px;
+		content: "";
+		border: 1px dotted #b3b3c3;
+	}
+	a {
+		position: relative;
+		font-weight: $font-semi;
+		color: $highlight-color;
+	}
+	span {
+		display: block;
+		font-size: $small-font;
+		font-weight: $font-regular;
+	}
+}
+
+ 
+
+/* ============================================== 
+
+8. Contact page 
+
+============================================== */
+
+.mingo-contact-widget {
+	background: $white-color;
+	position: relative;
+	padding: 30px 15px;
+	margin-bottom:30px;
+	@include desktop {
+		margin-bottom: 30px;
+	}
+	@include tablet {
+		margin-bottom: 30px;
+	}
+	&:before {
+		position: absolute;
+		left: 10px;
+		right: 10px;
+		top: 10px;
+		bottom: 10px;
+		content: "";
+		border: 1px dotted #b3b3c3;
+	}
+	h3,
+	h4,
+	h5 {
+		margin-bottom: 15px;
+	}
+	p {
+		margin: 0;
+	}
+}
+
+
+/* ============================================== 
+
+9. Footer-area 
+
+============================================== */
+
+.footer-area {
+	.inner-title {
+		@include tablet {
+			padding-bottom: 30px;
+		}
+		@include mobile {
+			padding-bottom: 30px;
+		}
+		position: relative;
+		&:before {
+			position: absolute;
+			bottom: 45px;
+			left: 0;
+			width: 55px;
+			height: 2px;
+			background: $dark-color;
+			content: "";
+			z-index: 1;
+			@include desktop {
+				bottom: 25px;
+			}
+			@include tablet {
+				bottom: 25px;
+			}	
+			@include mobile {
+				bottom: 25px;
+			}			
+		}
+		@include desktop {
+			padding-bottom: 30px;
+		}
+		
+	}
+	.mingo-widget-link, .mingo-tags {
+			a {
+				color:$dark-color;
+				&:hover {
+					color: $highlight-color
+				}
+			}
+		}
+	.footer-border {
+		position: relative;
+		&:before {
+			position: absolute;
+			top: 45px;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background: #EDECEC;
+			content: "";
+		}
+		@include desktop {
+			display: none;
+		}
+		@include tablet {
+			display: none;
+		}
+	}
+	.mingo-populer-post {
+		display: table;
+		width: 100%;
+		margin-bottom: $inner-30;
+		@include transition(all .2s linear);
+	}
+	.mingo-post-title {
+		margin-bottom: 10px;
+		h6 {
+			margin: 0;
+		}
+		a{
+			color:$dark-color;
+						white-space: normal;
+			word-break: break-word;
+			&:hover {
+				color:$highlight-color
+			}
+		}
+	}
+	.mingo-p-thumb {
+		float: left;
+		width: 100px;
+		margin-right: 25px;
+	}
+	.mingo-meta {
+		float: left;
+		width: calc(100% - 125px);
+	}
+	.mingo-tag p {
+		display: inline-block;
+		font-size: $small-font;
+		padding-right: 15px;
+		font-weight: $font-regular;
+		margin: 0;
+		color: $grey-color;
+		a {
+			color: $grey-color;
+			&:hover {
+				color:$highlight-color
+			}
+		}
+		i {
+			padding-right: 10px;
+		}
+	}
+	.mingo-widget-link ul li,
+	.mingo-tags ul li {
+		margin-bottom: 10px;
+		@include transition(all .2s linear);
+	}
+	.mingo-tags {
+		@include mobile {
+			margin-bottom: 40px;
+		}
+	}
+	.mingo-footer-bottom p {
+		color: $dark-color;
+		margin:0;
+	}
+}
+.error-area{
+    min-height:100vh;
+}
+.m-error-text img {
+	max-width: 380px;
+	width: 100%;
+	@include mobile {
+		max-width: 300px;
+		width: 100%;
+	}
+}
+
+
+/* ============================================== 
+
+10. ScrollUp 
+
+============================================== */
+
+#scrollUp {
+	height: 40px;
+	width: 40px;
+	background: #f6f6f6;
+	line-height: 40px;
+	border-radius: 50%;
+	bottom: 15px;
+	right: 15px;
+	text-align: center;
+	cursor: pointer;
+	i {
+		font-size: $h4-font-size;
+	}
+	&:hover i {
+		color: $white-color;
+	}
+	&:hover {
+		background: $highlight-color;
+	}
+}
+
+
+/* ============================================== 
+
+11. Preloader 
+
+============================================== */
+
+.preloader-wrapper {
+	position: fixed;
+	z-index: 99999;
+	background: $white-color;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.lds-spinner {
+	color: official;
+	display: inline-block;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	width: 64px;
+	height: 64px;
+	margin: auto;
+}
+
+.lds-spinner div {
+	transform-origin: 32px 32px;
+	animation: lds-spinner 1.2s linear infinite;
+}
+
+.lds-spinner div:after {
+	content: " ";
+	display: block;
+	position: absolute;
+	top: 3px;
+	left: 29px;
+	width: 5px;
+	height: 14px;
+	border-radius: 20%;
+	background: $primary-color;
+}
+
+.lds-spinner div:nth-child(1) {
+	transform: rotate(0deg);
+	animation-delay: -1.1s;
+}
+
+.lds-spinner div:nth-child(2) {
+	transform: rotate(30deg);
+	animation-delay: -1s;
+}
+
+.lds-spinner div:nth-child(3) {
+	transform: rotate(60deg);
+	animation-delay: -0.9s;
+}
+
+.lds-spinner div:nth-child(4) {
+	transform: rotate(90deg);
+	animation-delay: -0.8s;
+}
+
+.lds-spinner div:nth-child(5) {
+	transform: rotate(120deg);
+	animation-delay: -0.7s;
+}
+
+.lds-spinner div:nth-child(6) {
+	transform: rotate(150deg);
+	animation-delay: -0.6s;
+}
+
+.lds-spinner div:nth-child(7) {
+	transform: rotate(180deg);
+	animation-delay: -0.5s;
+}
+
+.lds-spinner div:nth-child(8) {
+	transform: rotate(210deg);
+	animation-delay: -0.4s;
+}
+
+.lds-spinner div:nth-child(9) {
+	transform: rotate(240deg);
+	animation-delay: -0.3s;
+}
+
+.lds-spinner div:nth-child(10) {
+	transform: rotate(270deg);
+	animation-delay: -0.2s;
+}
+
+.lds-spinner div:nth-child(11) {
+	transform: rotate(300deg);
+	animation-delay: -0.1s;
+}
+
+.lds-spinner div:nth-child(12) {
+	transform: rotate(330deg);
+	animation-delay: 0s;
+}
+
+@keyframes lds-spinner {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
